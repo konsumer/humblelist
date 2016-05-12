@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Konsumer's Humble Bundles</title>
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Roboto|Material+Icons'>
+    <link rel='stylesheet prefetch' href='app.css'>
+    <base href='/' />
+  </head>
+  <body>
+    <div ui-view></div>
+    <script type='text/ng-template' id='page.html'>
+      <div ng-cloak layout='column' layout-padding>
+        <md-select ng-model='platform' aria-label='Platform' ng-change='platformChange(platform)'>
+          <md-option value='all'>all</md-option>
+          <md-option value='android'>Android</md-option>
+          <md-option value='audio'>Audio</md-option>
+          <md-option value='ebook'>eBook</md-option>
+          <!-- <md-option value='gog'>GoG</md-option> -->
+          <md-option value='asmjs'>Web (asmjs)</md-option>
+          <!-- <md-option value='generic'>Key</md-option> -->
+          <md-option value='linux'>Linux</md-option>
+          <md-option value='mac'>Mac</md-option>
+          <!-- <md-option value='origin'>Origin</md-option> -->
+          <!-- <md-option value='steam'>Steam</md-option> -->
+          <md-option value='windows'>Windows</md-option>
+        </md-select>
+        <md-content layout='column'>
+          <md-virtual-repeat-container id='vertical-container'>
+            <md-card md-virtual-repeat='title in titles | hasPlatform:platform'>
+              <md-card-title>
+                <md-card-title-text>
+                  <a target='_new' href='{{title.url}}' class='md-headline'>{{title.human_name}}</a>
+                  <span class='md-subhead'>{{title.payee.human_name}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class='md-media-sm card-media'>
+                    <img ng-src='{{title.icon}}' />
+                  </div>
+                </md-card-title-media>
+              </md-card-title>
+            </md-card>
+          </md-virtual-repeat-container>
+        </md-content>
+      </div>
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js'></script>
+    <script src='app.js'></script>
+  </body>
+</html>

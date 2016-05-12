@@ -1,0 +1,9 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+#vertical-container {
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
