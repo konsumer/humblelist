@@ -3,10 +3,8 @@
 }
 
 #vertical-container {
-  height: 400px;
   border: 1px solid #ccc;
-  padding: 20px;
-  flex-wrap: wrap;
+  height: 300px;
 }
 
 .product {

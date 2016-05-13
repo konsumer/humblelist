@@ -27,8 +27,8 @@
           <md-option value='windows'>Windows</md-option>
         </md-select>
         <md-content>
-          <md-virtual-repeat-container id='vertical-container'>
-            <md-card class="product" md-virtual-repeat='title in titles | hasPlatform:platform'>
+          <md-virtual-repeat-container id='vertical-container' layout="column">
+            <md-card flex="50" class="product" md-virtual-repeat='title in titles | hasPlatform:platform'>
               <md-card-title>
                 <md-card-title-text>
                   <a target='_new' href='{{title.url}}' class='md-headline'>{{title.human_name}}</a>
