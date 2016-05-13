@@ -40,7 +40,7 @@ angular.module('app', [
               .then(returnData)
               .then(function(data) {
                 titles = titles.concat(data.subproducts)
-                if (i === (a.length-1)){
+                if (i % 5 === 0 || i === (a.length-1)){
                   $scope.titles = cache = titles
                     .sort(function sortByTitle(a, b) {
                       if (a.human_name < b.human_name){

@@ -26,9 +26,9 @@
           <!-- <md-option value='steam'>Steam</md-option> -->
           <md-option value='windows'>Windows</md-option>
         </md-select>
-        <md-content layout='column'>
+        <md-content>
           <md-virtual-repeat-container id='vertical-container'>
-            <md-card md-virtual-repeat='title in titles | hasPlatform:platform'>
+            <md-card class="product" md-virtual-repeat='title in titles | hasPlatform:platform'>
               <md-card-title>
                 <md-card-title-text>
                   <a target='_new' href='{{title.url}}' class='md-headline'>{{title.human_name}}</a>
